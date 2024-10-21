@@ -1,0 +1,79 @@
+.bike {
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    margin: 1rem;
+    width: calc(33.33% - 2rem);
+    box-sizing: border-box;
+    padding: 1rem; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    border-radius: 0.2rem;
+}
+
+.bikeContentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bikeImageClass {
+    width: 100%; /* Make the image container full width of its parent */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.bikeImageClass img {
+    max-width: 90%; /* Reduce from 100% to create some space on the sides */
+    height: auto;
+    max-height: 20rem; /* Slightly reduced to account for padding */
+    object-fit: contain; /* Ensures the entire image is visible */
+}
+
+.bikeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bikeSelectImage {
+    margin-bottom: 0.5rem;
+    width: 90%; /* Reduced from 80% to match the image width */
+}
+
+.bikeNameButtonClass,
+.bikePriceButtonClass {
+    background-color: #5D7B9D;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 90%; /* Reduced from 80% to match the image width */
+    margin-bottom: 0.5rem;    
+}
+
+.bikeNameButtonClass:hover,
+.bikePriceButtonClass:hover {
+    background-color: #4A6282;
+}
+
+.bikeNameButtonClass:active,
+.bikePriceButtonClass:active {
+    background-color: #3C5068;
+}
+
+.newBikeNameInputClass,
+.newBikePriceInputClass {
+    width: 90%; /* Reduced from 80% to match the image width */
+    padding: 8px;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+@media (max-width: 45rem) {
+    .bike {
+        width: calc(100% - 2rem);
+    }
+}

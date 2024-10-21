@@ -1,0 +1,101 @@
+/* mobile first design -- everything down to the media query is for mobile */
+body { 
+    margin:0;                   /* no white border around browser window */
+    font-family: "Trade Gothic W01", sans-serif;
+    background-color: #7891AD;
+}
+
+#titleNav {  
+
+    /* mobile: title on top of nav */
+    display:flex; 
+    flex-direction: column;
+
+    /* fixed to top */
+    position: fixed;
+    top: 0rem;
+    width: 100%;
+    z-index:1;
+    
+
+    letter-spacing: 0.1rem;
+    padding: 0.5rem;
+    color: #FEBC29;
+    background-color:#5D7B9D;  
+
+}
+
+#title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    letter-spacing: 0.2rem; /* spaces out letters a bit */
+    white-space: nowrap;  /* don't allow the title to wrap */
+}
+
+#nav {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    white-space: nowrap;  /* don't allow nav links to wrap */
+    text-align: right;
+    
+}
+
+
+#nav a {  
+    text-decoration:none;  /* Do not want links in "nav" to be underlined */   
+}
+
+#nav a:active {
+    color: #D49D22;
+}
+
+#content {
+    padding: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem; 
+    
+    /* for mobile the titleNav is taller, needs more top padding */
+    margin-top: 6rem;  
+
+    /* dont allow footer to cover up bottom of content */
+    margin-bottom: 2rem;
+    
+}
+
+#footer {
+
+    /* Fix the footer at the bottom, and make sure (z-index) it's on top of content */
+    position: fixed; 
+    bottom:0px;
+    z-index: 1;
+
+    background-color: #5D7B9D;
+    color: #FEBC29; 
+    padding: 0.5rem;
+    text-align: center;
+    width: 100%;
+}
+    
+#titleNav, #footer {
+    /* give a little "3D"  effect to the edges of titleNav and footer */
+    box-shadow: 0rem 0rem 1rem rgba(0,0,0);  
+}
+
+/* desktop only */
+@media only screen and (min-width: 38rem) { /* this size is tailored to size of "web site title" */
+
+    /* in desktop the titleNav is not as tall, so less top margin needed to prevent titleNav from hiding top of for content */
+    #content {
+        margin-top: 4rem;
+        margin-bottom: 2rem
+    }
+
+    #titleNav {
+        /* flex attributes */
+        flex-direction: row;
+        justify-content: space-between; /* flex attribute will push title left and nav right, with "space between" */
+    }
+}

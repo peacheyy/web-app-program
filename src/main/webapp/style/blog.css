@@ -1,0 +1,19 @@
+.blog {
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    letter-spacing: .0625em;
+}
+
+.blog h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.blog a {
+    color: #FEBC29; 
+}
+
+.blog a:active {
+    color: #D49D22;
+}

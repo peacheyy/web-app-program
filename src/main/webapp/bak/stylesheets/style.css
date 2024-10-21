@@ -1,0 +1,100 @@
+/*  You can only use the "slash star ... star slash" style comment inside a style sheet */
+           
+html, body {   /* Prevents tiny white border inside browser window. */
+    margin:0rem; 
+    padding:0rem; 
+}
+
+body { 
+    background-color: #34688F; /* red, green, blue (255 is max)
+                                             this is the turqoise color */
+    color: #FEBC29;  /* color of font */
+    font-family: sans-serif; /* "no tail" font is more readable for small font */
+}
+
+#title { /* title is fixed, always at the top */
+    /* position fixed removes the element from the normal flow, 
+       placing it w.r.t. the browser's edge as specified by top/bottom, left/right */
+    position:fixed; 
+    top:0rem;
+    left:0rem;
+    z-index: 1;     /* To make sure title is on top of content, 
+                       give it a higher z-index than content 
+                       (which has the default value, zero). */
+    width: 100%;    /* fixed elements are not 100% by default like other divs would be */
+
+    font-family: serif; 
+    letter-spacing: 0.1rem; /* spaces out letters a bit */
+    color: #FEBC29;   /* font color */
+    background-color:#5D7B9D;  
+    padding:0.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+#pageTitle { 
+    font-size: 3rem;
+    white-space: nowrap;
+}
+
+#nav { 
+    text-align:center;
+    font-size:1rem;
+    font-weight:bold;
+    white-space: nowrap;
+    padding-top: 0.5rem;
+}
+
+#nav a {  /* this selector applies to links within #nav */
+    text-decoration:none;  /* Do not want links in "nav" to be underlined */
+    color: #C8C8C8; /* light gray: to specify color for links, you have to style the "a" tag */
+}
+
+#content {  /* Add padding top to prevent title from covering up top of content. 
+               add padding bottom to prevent bottom content from getting hidden under footer. */ 
+    padding:1rem;
+    padding-top: 6rem; /* prevent the top of the content from getting hidden under the fixed title */
+    padding-bottom: 3rem; /* prevent the the bottom of the content from getting hidden under the fixed footer */
+}
+
+#content img { /* this selector applies to images within #content */
+    width: 40%;
+    border-radius: 0.5rem;
+    box-shadow: 0.4rem 0.4rem 0.4rem rgba(0,0,0,0.6); /* color is black which is 60% solid */
+}
+
+#content a { /*applies to links in the content box*/
+    color: red;
+}
+        
+#footer { /* footer fixed, always at the bottom left */
+    position: fixed;
+    bottom: 0rem; 
+    left: 0rem; 
+    z-index: 1; /* make sure footer is on top of content which would have default z-index value of 0 */
+
+    background-color: #5D7B9D;
+    color: #FEBC29; 
+    width:100%; /* fixed elements are not 100% by default like other divs would be */
+    text-align:center;
+    padding:0.5rem;	 	 
+}
+
+
+@media only screen and (min-width: 40rem) { /* overwrites styles above when screen is wider than 40rem */
+
+    #title {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #pageTitle {
+        font-size: 3rem;
+    }
+        
+    #nav {
+        padding-top: 1.5rem;
+    }
+}

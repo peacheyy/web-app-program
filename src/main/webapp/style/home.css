@@ -1,0 +1,27 @@
+.home {
+    display: block;
+    text-align: center;
+    color: white;
+}
+
+.home p {
+    letter-spacing: .0625em;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding-left: 18%;
+    padding-right: 18%;
+}
+
+.home img {
+    width: 65%;
+    border-radius: 0.2rem;
+    box-shadow: 0.4rem 0.4rem 0.4rem rgba(0,0,0,0.6); /* color is black which is 60% solid */
+}
+
+.home a {
+    color: #FEBC29; 
+}
+
+.home a:active {
+    color: #D49D22;
+}
