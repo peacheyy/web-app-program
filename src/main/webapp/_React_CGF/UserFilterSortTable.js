@@ -53,6 +53,9 @@ const UserFilterSortTable = () => {
     return (
         <div className="clickSort">
             <h3>
+                <Link to="/userInsertOrUpdate">
+                    <img src="icons/insert.png" alt="Add New User" />
+                </Link>
                 Filterable and Sortable User List &nbsp;
                 <input name="input" value={filterInput} onChange={(e) => setFilterInput(e.target.value)} />
                 &nbsp;

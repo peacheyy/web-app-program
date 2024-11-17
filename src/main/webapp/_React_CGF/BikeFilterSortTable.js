@@ -53,6 +53,9 @@ const BikeFilterSortTable = () => {
     return (
         <div className="clickSort">
             <h3>
+                <Link to="/bikeInsertOrUpdate">
+                    <img src="icons/insert.png" alt="Add New Bike" />
+                </Link>
                 Filterable and Sortable Bike List &nbsp;
                 <input name="input" value={filterInput} onChange={(e) => setFilterInput(e.target.value)} />
                 &nbsp;

@@ -10,7 +10,6 @@
     <link href="style/main.css" rel="stylesheet" type="text/css" />
     <link href="style/dropDown.css" rel="stylesheet" type="text/css" />
     <link href="style/myDropDown.css" rel="stylesheet" type="text/css" />
-    <link href="style/cars.css" rel="stylesheet" type="text/css" />
     <link href="style/blog.css" rel="stylesheet" type="text/css" />
     <link href="style/obj.css" rel="stylesheet" type="text/css" />
     <link href="style/home.css" rel="stylesheet" type="text/css" />
@@ -45,19 +44,22 @@
     <script src="_JS_reusable/filterObjList.js"></script>
 
     <!-- JS Content Generating functions (these are called by the router). -->
-    <script src="_JS_CGF/CarsComingSoon.js"></script>
-    <script src="_JS_CGF/MakeObj_CGF.js"></script>
-    <script src="_JS_CGF/InfoContent.js"></script>
     <script src="_JS_CGF/MakeBike_CGF.js"></script>
 
     <!-- React reusable (these are called by CGFs). -->
     <script type="text/babel" src="_React_reusable/ConvertEle.js"></script>
+    <script type="text/babel" src="_React_reusable/DisplayUser.js"></script>
 
     <!-- React Content Generating functions (these are called by the router) -->
     <script type="text/babel" src="_React_CGF/Blog.js"></script>
     <script type="text/babel" src="_React_CGF/Home.js"></script>
     <script type="text/babel" src="_React_CGF/UserFilterSortTable.js"></script>
     <script type="text/babel" src="_React_CGF/BikeFilterSortTable.js"></script>
+    <script type="text/babel" src="_React_CGF/UserLogin.js"></script>
+    <script type="text/babel" src="_React_CGF/UserLogoff.js"></script>
+    <script type="text/babel" src="_React_CGF/UserProfile.js"></script>
+    <script type="text/babel" src="_React_CGF/UserInsertOrUpdate.js"></script>
+    <script type="text/babel" src="_React_CGF/BikeInsertOrUpdate.js"></script>
 
     <!-- Any React scripts (which typically have JSX) needs script type="text/babel" -->
 
@@ -89,7 +91,7 @@
                         <div class="dropDown">
                             <div class="dropHeader">ACCOUNT</div>
                             <div class="dropContent">
-                                <Link to="/register">Register</Link> <br />
+                                <Link to="/userInsertOrUpdate">Register</Link> <br />
                                 <Link to="/login">Log In</Link> <br />
                                 <Link to="/logout">Log Out</Link> <br />
                                 <Link to="/profile">Profile</Link> <br />
@@ -99,13 +101,10 @@
                         <div class="dropDown">
                             <div class="dropHeader">SEARCH</div>
                             <div class="dropContent">
-                                <Link to="/cars">Cars</Link> <br />
-                                <Link to="/myObj">My Objects</Link> <br />
-                                <Link to="/info">Info</Link> <br />
                                 <a target="_blank" href="docs/Peachey_database.pdf">My DB PDF</a> <br />
                                 <br />
-                                <Link to="/usersSortFilterTable">Show web_user database</Link> <br />
-                                <Link to="/bikesSortFilterTable">Show user_bike database</Link> <br />
+                                <Link to="/userFilterSortTable">Show web_user database</Link> <br />
+                                <Link to="/bikeFilterSortTable">Show user_bike database</Link> <br />
                             </div>
                         </div>
 
@@ -127,11 +126,14 @@
                     <Route path="/home" component={Home} />
                     <Route path="/blog" component={Blog} />
                     <Route path="/cars" component={() => <ConvertEle ele={CarsComingSoon()} />} />
-                    <Route path="/myObj" component={() => <ConvertEle ele={MakeObj_CGF()} />} />
-                    <Route path="/info" component={() => <ConvertEle ele={InfoContent()} />} />
                     <Route path="/myBike" component={() => <ConvertEle ele={MakeBike_CGF()} />} />
-                    <Route path="/usersSortFilterTable" component={UserFilterSortTable} />
-                    <Route path="/bikesSortFilterTable" component={BikeFilterSortTable} />
+                    <Route path="/userFilterSortTable" component={UserFilterSortTable} />
+                    <Route path="/bikeFilterSortTable" component={BikeFilterSortTable} />
+                    <Route path="/login" component={UserLogin} />
+                    <Route path="/profile" component={UserProfile} />
+                    <Route path="/logout" component={UserLogoff} />
+                    <Route path="/userInsertOrUpdate" component={UserInsertOrUpdate} />
+                    <Route path="/bikeInsertOrUpdate" component={BikeInsertOrUpdate} />
                 </div>
 
                 <div id="footer">

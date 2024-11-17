@@ -100,7 +100,23 @@ function Blog() {
                     replicating that on my bike database. This homework proved to be very vaulable to me as I was able to figure out how sorting 
                     and filtering works as well as how to integrate my database into a pleasant ui.
                 </p>
-
+                <h3>HW 7 Logon</h3>
+                <p>
+                    This homework wasn't that challenging for me as the code we worked on during the lab helped me understand what was required 
+                    for the homework. I was able to reuse some of it and alter what was necessary. The one thing I found challenging 
+                    about this homework was working with session to ensure that my pages worked correctly depending on whether I was 
+                    logged in or not. This homework was a great learning opportunity for me as I had never created a web page with logon 
+                    capabilities. 
+                </p>
+                <h3>HW 8 Insert</h3>
+                <p>
+                    This has been a very challenging homework for me as I struggled to implement my other database insert. Initially, using 
+                    the provided code made my user insert pretty straight forward. However, upon starting my other database insert, I ran into 
+                    multiple issues including making sure the correct fields are non-nullable and creating a drop down for choosing the 
+                    user email you wanted to add the bike to. This was a great learning experience for me as I was able to learn trouble shooting 
+                    strategies for inserting as well as how to set up inserting in general to a sql database. This is crucial to any website and is 
+                    fundemental to manipulating data in a database.
+                </p>
             </p>
         </div>
     );
