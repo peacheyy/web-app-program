@@ -12,7 +12,7 @@ public class DbConn {
 
     public DbConn() {
 
-        String dbAndPass = "";
+        String dbAndPass = "fa24_3308_tuo18991?user=tuo18991&password=Tieb4ceb";
         try {
             String DRIVER = "com.mysql.cj.jdbc.Driver";
             Class.forName(DRIVER);

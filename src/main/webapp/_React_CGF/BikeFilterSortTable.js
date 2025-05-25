@@ -26,6 +26,35 @@ const BikeFilterSortTable = () => {
         );
     }, []);
 
+    const deleteListEle = (theList, indx) => {
+        theList.splice(indx, 1);
+        return JSON.parse(JSON.stringify(theList));
+    };
+
+    const deleteBike = (bikeObj, indx) => {
+        console.log("To delete bike " + bikeObj.bikeName + "?");
+
+        if (window.confirm("Do you really want to delete " + bikeObj.bikeName + "? ")) {
+            ajax_alt(
+                "userBike/delete?bikeId=" + bikeObj.bikeId,
+                function(obj) {
+                    if (!obj.errorMsg) {
+                        const newDbList = deleteListEle([...dbList], indx);
+                        const newFilteredList = deleteListEle([...filteredList], indx);
+                        setDbList(newDbList);
+                        setFilteredList(newFilteredList);
+                        alert("Successfully deleted bike " + bikeObj.bikeName);
+                    } else {
+                        alert("Error deleting bike: " + obj.errorMsg);
+                    }
+                },
+                function(error) {
+                    alert("Error deleting bike: " + error);
+                }
+            );
+        }
+    };
+
     const doFilter = (filterInputVal) => {
         let newList = filterObjList(dbList, filterInputVal);
         setFilteredList(newList);
@@ -67,15 +96,14 @@ const BikeFilterSortTable = () => {
             <table>
                 <thead>
                     <tr>
+                        <th></th>
+                        <th></th>
                         <th onClick={() => sortByProp("bikeName", "text")}>
                             <img src="icons/sortUpDown16.png" alt="sort" />
                             Bike Name
                         </th>
                         <th className="textAlignCenter">Image</th>
-                        <th
-                            onClick={() => sortByProp("bikePrice", "number")}
-                            className="textAlignCenter"
-                        >
+                        <th onClick={() => sortByProp("bikePrice", "number")} className="textAlignCenter">
                             <img src="icons/blackSort.png" alt="sort" />
                             Price
                         </th>
@@ -83,10 +111,7 @@ const BikeFilterSortTable = () => {
                             <img src="icons/sortUpDown16.png" alt="sort" />
                             Year Manufactured
                         </th>
-                        <th
-                            onClick={() => sortByProp("bikeBrand", "text")}
-                            className="textAlignCenter"
-                        >
+                        <th onClick={() => sortByProp("bikeBrand", "text")} className="textAlignCenter">
                             <img src="icons/blackSort.png" alt="sort" />
                             Bike Brand
                         </th>
@@ -102,10 +127,25 @@ const BikeFilterSortTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredList.map((listObj) => (
+                    {filteredList.map((listObj, index) => (
                         <tr key={listObj.bikeId}>
+                            <td className="textAlignCenter">
+                                <img 
+                                    src="icons/delete.png" 
+                                    className="clickLink"
+                                    onClick={() => deleteBike(listObj, index)}
+                                    alt="Delete"
+                                />
+                            </td>
+                            <td>
+                                <a href={'#/bikeUpdate/:' + listObj.bikeId}>
+                                    <img src="icons/update.png" className="clickLink" alt="Update" />
+                                </a>
+                            </td>
                             <td>{listObj.bikeName}</td>
-                            <td className="shadowImage textAlignCenter"><img src={listObj.bikeImage} /></td>
+                            <td className="shadowImage textAlignCenter">
+                                <img src={listObj.bikeImage} alt="Bike" />
+                            </td>
                             <td className="textAlignRight">{listObj.bikePrice}</td>
                             <td className="textAlignCenter">{listObj.yearManufactured}</td>
                             <td className="textAlignCenter">{listObj.bikeBrand}</td>

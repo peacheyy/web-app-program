@@ -117,6 +117,20 @@ function Blog() {
                     strategies for inserting as well as how to set up inserting in general to a sql database. This is crucial to any website and is 
                     fundemental to manipulating data in a database.
                 </p>
+                <h3>HW 9 Update</h3>
+                <p>
+                    This homework was much easier than the insert homework in my opinion. The provided code made implementing update very straight 
+                    forward and even figuring out update for my other database was straight forward too. The update code we created for the lab made 
+                    the inserting of update directly from the table page much easier as I only had to include another route path in my index that 
+                    specified the id of the user/bike. This homework was great for understanding how to incorporate update and given that our code 
+                    was already basically set up for the homework was satisfying.
+                </p>
+                <h3>HW 10 Delete</h3>
+                <p>
+                    This homework was pretty straight forward. I think the most difficult part was implementing it with my bike database but that 
+                    wasn't much of a challenge. I liked this homework because now I understand every important component of manipulating data 
+                    in the backend. I will use this knowledge for the rest of my coding career.
+                </p>
             </p>
         </div>
     );
